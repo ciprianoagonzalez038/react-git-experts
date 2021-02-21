@@ -1,16 +1,10 @@
 import React, { useState} from 'react'
 import PropTypes from 'prop-types'
 import CategoriesAdd from './components/CategoriesAdd';
+import { GiftGrid } from './components/GiftGrid';
 
 const GitExpertApp = props => {
-    //const categorias = ['One Push', 'Samurai x', 'Drago ball']
-     const [categorias, setCategorias] = useState(['One Push', 'Samurai x', 'Drago ball']);
-/*
-    const handleAdd = ()=>{
-       
-        setCategorias(c => [...c, 'yyyyyy']);
-    } 
-    */
+     const [categorias, setCategorias] = useState(['One Push']);
 
     return (
         <>
@@ -21,7 +15,10 @@ const GitExpertApp = props => {
             <ol>
                 {
                     categorias.map( (categoria, i) => {
-                        return <li key={categoria}>{categoria}</li>;
+                        return <GiftGrid 
+                                    categoria ={categoria} 
+                                    key={categoria}
+                                />;
                     })
                 }
             </ol>
